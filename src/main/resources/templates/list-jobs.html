@@ -11,11 +11,11 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
 
-    <h1 th:text="${listAllResults.size() + ' Result(s)'}"></h1>
+    <h1 th:text="${jobs.size() + ' Result(s)'}"></h1>
 
-    <div th:if="${listAllResults.size() == 0}"><h3>Sorry, nothing here.</h3></div>
+    <div th:if="${jobs.size() == 0}"><h3>Sorry, nothing here.</h3></div>
 
-    <table th:if="${listAllResults.size() != 0}" class="job-listing" th:each="job : ${listAllResults}">
+    <table th:if="${jobs.size() != 0}" class="job-listing" th:each="job : ${jobs}">
         <tr th:each="jobData : ${job.entrySet()}">
             <th><strong th:text="${jobData.getKey()}">Title</strong></th>
             <td th:text="${jobData.getValue()}">Value</td>
